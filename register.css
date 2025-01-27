@@ -1,0 +1,188 @@
+
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .w3-teal {
+  background-color:rgb(88, 17, 17) !important;
+  margin-bottom: 40px;
+}
+
+        header, footer {
+            background-color: #800000;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .registration-form {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.3);
+            width: 50%;
+           
+            margin: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .registration-form h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffcccc;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #ffcccc;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #360a0a;
+            border-radius: 6px;
+            background-color: #262626;
+            color: #ffffff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #ff6666;
+            outline: none;
+        }
+
+        .form-group select {
+            background-color: #262626;
+        }
+
+        .radio-group, .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: block;
+            font-size: 14px;
+            color: #ffcccc;
+            margin-bottom: 5px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #360a0a;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #360a0a;
+        }
+
+
+ /*footer*/ 
+ footer{ 
+      background-color: rgb(88, 17, 17); 
+      margin-top: 40px;
+  } 
+  .footerContainer{ 
+      width: 100%; 
+      
+      padding: 70px 30px 20px ; 
+  } 
+  .socialIcons{ 
+      display: flex; 
+      justify-content: center; 
+  } 
+  .socialIcons a{ 
+      text-decoration: none; 
+      padding:  10px; 
+      background-color: rgb(244, 244, 245); 
+      margin: 10px; 
+      border-radius: 50%; 
+  } 
+  .socialIcons a i{ 
+      font-size: 2em; 
+      color: rgb(5, 30, 46); 
+      opacity: 0,9; 
+  } 
+  /* Hover affect on social media icon */ 
+  .socialIcons a:hover{ 
+      background-color: rgb(148, 108, 108); 
+      transition: 0.5s; 
+  } 
+  .socialIcons a:hover i{ 
+      color: white; 
+      transition: 0.5s; 
+  } 
+  .footerNav{ 
+      margin: 30px 0; 
+  } 
+  .footerNav ul{ 
+      display: flex; 
+      justify-content: center; 
+      list-style-type: none; 
+  } 
+  .footerNav ul li a{ 
+      color:rgb(255, 255, 255); 
+      margin: 20px; 
+      text-decoration: none; 
+      font-size: 1.3em; 
+      opacity: 0.7; 
+      transition: 0.5s; 
+   
+  } 
+  .footerNav ul li a:hover{ 
+      opacity: 1; 
+  } 
+  .footerBottom{ 
+     background-color: #151414;
+      padding: 20px; 
+      text-align: center; 
+  } 
+  .footerBottom p{ 
+      color: white; 
+  } 
+  .designer{ 
+      opacity: 0.7; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      font-weight: 400; 
+      margin: 0px 5px; 
+  } 
+  @media (max-width: 700px){ 
+      .footerNav ul{ 
+          flex-direction: column; 
+      }  
+      .footerNav ul li{ 
+          width:100%; 
+          text-align: center; 
+          margin: 10px; 
+      } 
+      .socialIcons a{ 
+          padding: 8px; 
+          margin: 4px; 
+      } 
+  }
