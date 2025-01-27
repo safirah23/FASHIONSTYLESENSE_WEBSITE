@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, .w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.w3-teal {
+  background-color:rgb(88, 17, 17) !important;
+}
+
+a:link, a:visited { 
+ 
+  padding: 14px 25px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+} 
+ 
+
+
+  body {
+ 
+ font-family: 'Outfit';
+ background-image: url("Image/Screenshot\ 2025-01-22\ 030417.png");
+ 
+
+} 
+
+
+.contact-container{
+
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+}
+
+.contact-left {
+
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+ gap: 20px;
+}
+
+.contact-left-title h2{
+ font-weight: 600;
+ color: #ffffff;
+ font-size: 40px;
+ margin-bottom: 5px;
+}
+
+.contact-left-title hr{
+ border: none; 
+ width: 120px;
+ height: 5px;
+ background-color: #ffffff;
+ border-radius: 10px;
+ margin-bottom: 20px;
+}
+
+.contact-inputs {
+width: 400px;
+height: 50px;
+border: none;
+outline: none;
+padding-left: 25px;
+font-weight: 500;
+color: E#ffffff;
+border-radius: 50px;
+}
+
+.contact-left textarea {
+height: 140px;
+padding-top: 15px;
+border-radius: 20px;
+}
+.contact-inputs:focus {
+border: 2px solid #ff994f;
+}
+.contact-inputs::placeholder{
+color: U#ffffff;
+}
+.contact-left button{
+ display: flex;
+ align-items: center;
+ padding: 15px 30px;
+ font-size: 16px;
+ color: #fff;
+ gap: 10px;
+ border: none;
+ border-radius: 50px;
+ background-color: #6a0606;
+ cursor: pointer;
+}
+
+.contact-left button img{
+height: 15px;
+}
+.contact-right img{
+width: 500px;
+}
+@media (max-width:800px) {
+
+.contact-inputs{
+width: 8Ovw;
+}
+.contact-right{
+display: none;
+}
+}
+
+ /*footer*/ 
+ footer{ 
+      background-color: rgb(88, 17, 17); 
+  } 
+  .footerContainer{ 
+      width: 100%; 
+      
+      padding: 70px 30px 20px ; 
+  } 
+  .socialIcons{ 
+      display: flex; 
+      justify-content: center; 
+  } 
+  .socialIcons a{ 
+      text-decoration: none; 
+      padding:  10px; 
+      background-color: rgb(244, 244, 245); 
+      margin: 10px; 
+      border-radius: 50%; 
+  } 
+  .socialIcons a i{ 
+      font-size: 2em; 
+      color: rgb(5, 30, 46); 
+      opacity: 0,9; 
+  } 
+  /* Hover affect on social media icon */ 
+  .socialIcons a:hover{ 
+      background-color: rgb(148, 108, 108); 
+      transition: 0.5s; 
+  } 
+  .socialIcons a:hover i{ 
+      color: white; 
+      transition: 0.5s; 
+  } 
+  .footerNav{ 
+      margin: 30px 0; 
+  } 
+  .footerNav ul{ 
+      display: flex; 
+      justify-content: center; 
+      list-style-type: none; 
+  } 
+  .footerNav ul li a{ 
+      color:rgb(255, 255, 255); 
+      margin: 20px; 
+      text-decoration: none; 
+      font-size: 1.3em; 
+      opacity: 0.7; 
+      transition: 0.5s; 
+   
+  } 
+  .footerNav ul li a:hover{ 
+      opacity: 1; 
+  } 
+  .footerBottom{ 
+      background-image: url("Image/Screenshot\ 2025-01-22\ 022433.png ");
+      padding: 20px; 
+      text-align: center; 
+  } 
+  .footerBottom p{ 
+      color: white; 
+  } 
+  .designer{ 
+      opacity: 0.7; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      font-weight: 400; 
+      margin: 0px 5px; 
+  } 
+  @media (max-width: 700px){ 
+      .footerNav ul{ 
+          flex-direction: column; 
+      }  
+      .footerNav ul li{ 
+          width:100%; 
+          text-align: center; 
+          margin: 10px; 
+      } 
+      .socialIcons a{ 
+          padding: 8px; 
+          margin: 4px; 
+      } 
+  }
+</style>
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+  <a href="newarrivals.html" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+  <a href="community.html" class="w3-bar-item w3-button">COMMUNITY</a>
+  <a href="inspo.html" class="w3-bar-item w3-button">INSPO</a>
+  <a href="experts.html" class="w3-bar-item w3-button">EXPERTS</a>
+  <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<div id="main">
+    <div class="w3-teal" style="background-color: rgb(88, 17, 17);">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+    </div>
+  </div>
+
+  <div class="contact-container" style="margin-left: 50px;">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+    <div class="contact-left-title">
+    <h2>Contact Us</h2>
+    <hr>
+    </div>
+    <input type="hidden" name="access_key" value="665f64db-9866-42ab-b09a-b97bfa1de1a9">
+    <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+    <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+    <button type="submit">Submit <img src="assets/arrow_icon.png" alt=""></button>
+    </form>
+    <div class="contact-right">
+    <img src="Image/ContactPoster.jpg" alt="" style="height: 500px; width: 350px; margin-left: 10px;">
+    </div>
+    </div>
+    </body>
+
+  
+  
+ 
+
+  
+ 
+ <!-- Footer -->
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+<title>Document</title> 
+
+
+<footer> 
+<div class="footerContainer"> 
+  <div class="socialIcons"> 
+      <a href="https://www.instagram.com/loooovelyzz/profilecard/?igsh=bGt5OWx3bDh6OHh0"><i class="fa-brands fa-instagram"></i></a> 
+      <a href="https://www.tiktok.com/@stylesense_fashion?_t=ZS-8tPkyFPxrxS&_r=1"><i class="fa-brands fa-tiktok"></i></a> 
+      <a href="https://pin.it/38kbaQJe6"><i class="fa-brands fa-pinterest"></i></a> 
+      <a href="https://www.facebook.com/share/14q3Bn9mCH/"><i class="fa-brands fa-facebook"></i></a> 
+  </div> 
+  <div class="footerNav"> 
+      <ul><li><a href="Personal Portfolio.html">Home</a></li> 
+      </ul> 
+  </div> 
+   </div>
+</div> 
+<div class="footerBottom"> 
+  <p>Copyright &copy;2025; Designed by <span class="designer">STYLESENSE</span></p> 
+</div> 
+
+</footer>
+
+
+
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+<link rel="stylesheet" href="home.css">
+
+
+
+<body>
+  
+<!-- Navigation Bar -->
+
+<!-- Navigation Bar -->
+<div class="navbar" style="height: 100px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+  <div class="navbar-logo">
+    <img src="Image/S.jpg" alt="Logo" style="height: 70px; border-radius: 300px; margin-left: 4cqh; margin-top: 5px;">
+  </div>
+  <div class="navbar-links" style="display: flex; gap: 20px; align-items: center; justify-content: center; flex: 1; text-align: center;">
+    <a href="#A" style="margin: 0;">ABOUT US</a>
+    <a href="#B" style="margin: 0;">BRANDS</a>
+    <a href="#C" style="margin: 0;">CATEGORY</a>
+    <a href="#S" style="margin: 0;">SHOWS</a>
+    <a href="newarrivals.html" style="margin: 0;">NEW ARRIVAL</a>
+    <a href="community.html" style="margin: 0;">COMMUNITY</a>
+    <a href="inspo.html" style="margin: 0;">INSPO</a>
+    <a href="experts.html" style="margin: 0;">EXPERTS</a>
+  </div>
+  <div class="navbar-icons" style="display: flex; align-items: center; gap: 10px;">
+    <a href="contact.html"><img src="Image/contacticon.png" alt="Contact" style="height: 60px;"></a>
+    <a href="#" onclick="toggleLoginForm()"><img src="Image/loginicon.png" alt="Login" style="height: 50px;"></a>
+  </div>
+</div>
+
+
+
+
+
+<!-- Login Form -->
+<div id="loginForm" style="display: none; position: absolute; top: 110px; right: 10px; background-color: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000;">
+  <form>
+    <label for="username" style="font-family: Arial, sans-serif; font-size: 14px;">Username:</label><br>
+    <input type="text" id="username" name="username" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc;"><br>
+    <label for="password" style="font-family: Arial, sans-serif; font-size: 14px;">Password:</label><br>
+    <input type="password" id="password" name="password" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc;"><br>
+    <button type="submit" style="background-color: rgb(88, 17, 17); color: white; border: none; padding: 10px; width: 100%;">Login</button>
+  </form>
+</div>
+
+<script>
+  function toggleLoginForm() {
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm.style.display === 'none' || loginForm.style.display === '') {
+      loginForm.style.display = 'block';
+    } else {
+      loginForm.style.display = 'none';
+    }
+  }
+</script>
+
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="Image/hm.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Image/uniqlo.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Image/zara.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Image/cottonon.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/mango.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/petitmoi.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/padini.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/brandsoutlet.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/calaqisya.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="Image/poplook.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<!-- Page content -->
+<div class="row" style="align-items: center;">
+  <div class="column-small" style="padding: 5px;">
+    <!-- About Section -->
+    <div class="w3-row" id="about" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 10px 0;">
+      <div class="w3-col m6" style="padding: 5px;">
+        <div style="overflow: hidden; white-space: nowrap;">
+          <h1 class="marquee-text" style="display: inline-block; color: rgb(255, 255, 255); font-family: myFont; font-size: 20px;">
+            WELCOME TO STYLESENSE
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  
+
+<!-- Page content -->
+<div class="row" style="align-items: center;">
+  <div id="A" class="column" >
+    <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+      <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center" style="color: rgb(255, 255, 255); font-family: myFont; font-size: 50px;">ABOUT STYLESENSE</h1><br>
+        <h5 class="w3-center" style="color: rgb(255, 255, 255);">Welcome to the new era of fashion.</h5>
+        <p class="w3-center" style="color: rgb(255, 255, 255);">
+          Welcome to Stylesense, your ultimate fashion destination where creativity, style, and community converge. We believe that fashion is more than just clothing—it's a form of self-expression, an art, and a lifestyle. That’s why we’ve created a vibrant space where fashion lovers can discover, connect, and elevate their personal style.
+        </p>
+        <h5 class="w3-center" style="color: rgb(255, 255, 255);">OUR MISSION</h5>
+        <p class="w3-center" style="color: rgb(255, 255, 255);">
+          Our mission is simple: to inspire and empower fashion enthusiasts by offering curated recommendations and exclusive collaborations with leading and emerging brands. Whether you're seeking the perfect outfit for a special occasion, everyday essentials, or just want to stay ahead of the trends, we've got you covered.
+        </p>
+      </div>
+    </div>
+    
+  </div>
+    </div>
+
+    
+
+        
+
+  
+
+<!-- Product grid -->
+<div class="scroll-container">
+<div id="B" class="product-container">
+  <img src="Image/h&mlogo.jpg" class="product-img" width="30" height="30">
+  <a href="https://www2.hm.com/en_my/index.html">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/uniqlologo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.uniqlo.com/my/en/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/zaralogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.zara.com/my/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/cottononlogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://cottonon.com/MY/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/mangoloo.jpg" class="product-img" width="50" height="50">
+  <a href="https://shop.mango.com/my/en/h/women">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/petitmoilogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://petitmoi-shop.com/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/padinilogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.padini.com/brands/brands-outlet.html">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/BOlogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.padini.com/brands/brands-outlet.html">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/calaqishalogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://calaqisya.com/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/poplooklogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://poplook.com/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/innailogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.innaiandco.com/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+
+<div class="product-container">
+  <img src="Image/m&blogo.jpg" class="product-img" width="50" height="50">
+  <a href="https://www.mnbonline.com.my/">
+    <button class="w3-button w3-black explore-button">Explore <i class="fa fa-shopping-cart"></i></button>
+  </a>
+</div>
+</div>
+</div>
+
+
+    <div class="row">
+    <div id="C" class="column-1" >
+      <div class="w3-main w3-content w3-padding" style="max-width:1900px;margin-top:50px; "> 
+       
+        
+        <!-- First Photo Grid--> 
+        <h1 class="w3-center" style="color: rgb(0, 0, 0); font-family: myFont; font-size: 50px;">CATEGORY</h1><br> 
+        <div class="w3-row-padding w3-padding-16 w3-center" id="food"> 
+          <div class="w3-quarter"> 
+            <a href="blouse.html">
+              <img  src="Image/2.png" alt="blouse" style="width:100%">
+            </a>    
+            <h3 style="color: rgb(0, 0, 0); font-family: myFont; font-size: 30px;">BLOUSE</h3> 
+          </div> 
+          <div class="w3-quarter"> 
+            <a href="tops.html">
+              <img  src="Image/3.png" alt="tops" style="width:100%">
+            </a> 
+            <h3 style="color: rgb(0, 0, 0); font-family: myFont; font-size: 30px;">TOP</h3> 
+          </div> 
+          <div class="w3-quarter"> 
+            <a href="skirt.html">
+              <img  src="Image/4.png" alt="skirt" style="width:100%">
+            </a> 
+            <h3 style="color: rgb(0, 0, 0); font-family: myFont; font-size: 30px;">SKIRT</h3> 
+          </div> 
+          <div class="w3-quarter"> 
+            <a href="pants.html">
+              <img  src="Image/5.png" alt="pants" style="width:100%">
+            </a> 
+            <h3 style="color: rgb(0, 0, 0); font-family: myFont; font-size: 30px;">PANT</h3> 
+          </div> 
+        </div> 
+        </div>
+        </div>
+        </div>
+
+        <div class="row" style="align-items: center;">
+          <div id="S" class="column-3" >
+            <!-- About Section -->
+            <div class="w3-row w3-padding-64" id="about" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+              <div class="w3-col m6 w3-padding-large">
+                  <section class="background-section">
+                      <div class="content">
+                       <h1 class="w3-center" style="color: rgb(255, 255, 255); font-family: myFont; font-size: 50px;">FASHION SHOWS</h1><br>
+                        <a href="fashionshows.html" class="btn">WATCH NOW</a>
+                      </div>
+              </div>
+            </div>
+          </div>
+            </div>
+        
+
+  
+  
+ 
+<!-- End page content --> 
+  
+<!-- Footer -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <title>Document</title> 
+
+
+<footer> 
+  <div class="footerContainer"> 
+      <div class="socialIcons"> 
+          <a href="https://www.instagram.com/stylesense2025?igsh=MXFqYzFvejBzMnFoNA=="><i class="fa-brands fa-instagram"></i></a> 
+          <a href="https://www.tiktok.com/@stylesense_fashion?_t=ZS-8tPkyFPxrxS&_r=1"><i class="fa-brands fa-tiktok"></i></a> 
+          <a href="https://pin.it/38kbaQJe6"><i class="fa-brands fa-pinterest"></i></a> 
+          <a href="https://www.facebook.com/share/14q3Bn9mCH/"><i class="fa-brands fa-facebook"></i></a> 
+      </div> 
+      <div class="footerNav"> 
+          <ul><li><a href="Personal Portfolio.html">Home</a></li> 
+          </ul> 
+      </div> 
+       </div>
+  </div> 
+  <div class="footerBottom"> 
+      <p>Copyright &copy;2025; Designed by <span class="designer">STYLESENSE</span></p> 
+  </div> 
+  
+</footer>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+  }
+</script>
+
+
+</body>
+
+</html>

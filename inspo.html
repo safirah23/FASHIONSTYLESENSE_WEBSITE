@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Gallery</title>
+    <style>
+
+@font-face {
+    font-family: myFont;
+    src: url("Font/Relationship\ of\ mélodrame.ttf");
+  }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+    width: 100%;
+    height: 60vh;
+    background-image: url("Image/inspobackground.png");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+
+  .header h1 {
+    font-size: 60px;
+    color: #ffffff;
+    font-family: myFont;
+    margin: 0;
+  }
+
+  /* Navigation bar styling */
+  .navbar {
+    background-color: rgb(88, 17, 17);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .navbar a {
+    display: inline-block;
+    font-family: myFont;
+    color: #dcd1d1;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+
+        .gallery-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery-header {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #330712;
+            margin-bottom: 20px;
+            font-family: myFont;
+        }
+
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category-buttons button {
+            background-color: rgb(88, 17, 17);
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+            flex: 1 1 auto;
+            max-width: 150px;
+            font-family: myFont;
+        }
+
+        .category-buttons button:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            border-radius: 40px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+      
+        footer{ 
+      background-color: rgb(88, 17, 17); 
+  } 
+  .footerContainer{ 
+      width: 100%; 
+      
+      padding: 70px 30px 20px ; 
+  } 
+  .socialIcons{ 
+      display: flex; 
+      justify-content: center; 
+  } 
+  .socialIcons a{ 
+      text-decoration: none; 
+      padding:  10px; 
+      background-color: rgb(244, 244, 245); 
+      margin: 10px; 
+      border-radius: 50%; 
+  } 
+  .socialIcons a i{ 
+      font-size: 2em; 
+      color: rgb(5, 30, 46); 
+      opacity: 0,9; 
+  } 
+  /* Hover affect on social media icon */ 
+  .socialIcons a:hover{ 
+      background-color: rgb(148, 108, 108); 
+      transition: 0.5s; 
+  } 
+  .socialIcons a:hover i{ 
+      color: white; 
+      transition: 0.5s; 
+  } 
+  .footerNav{ 
+      margin: 30px 0; 
+  } 
+  .footerNav ul{ 
+      display: flex; 
+      justify-content: center; 
+      list-style-type: none; 
+  } 
+  .footerNav ul li a{ 
+      color:rgb(255, 255, 255); 
+      margin: 20px; 
+      text-decoration: none; 
+      font-size: 1.3em; 
+      opacity: 0.7; 
+      transition: 0.5s; 
+   
+  } 
+  .footerNav ul li a:hover{ 
+      opacity: 1; 
+  } 
+  .footerBottom{ 
+     background-color: #151414;
+      padding: 20px; 
+      text-align: center; 
+  } 
+  .footerBottom p{ 
+      color: white; 
+  } 
+  .designer{ 
+      opacity: 0.7; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      font-weight: 400; 
+      margin: 0px 5px; 
+  } 
+  @media (max-width: 700px){ 
+      .footerNav ul{ 
+          flex-direction: column; 
+      }  
+      .footerNav ul li{ 
+          width:100%; 
+          text-align: center; 
+          margin: 10px; 
+      } 
+      .socialIcons a{ 
+          padding: 8px; 
+          margin: 4px; 
+      } 
+  }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryButtons = document.querySelectorAll('.category-buttons button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.textContent.toLowerCase();
+
+                    galleryItems.forEach(item => {
+                        if (category === 'all') {
+                            item.classList.remove('hidden');
+                        } else {
+                            const itemCategory = item.getAttribute('data-category');
+                            if (itemCategory === category) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        });
+
+        
+    </script>
+</head>
+
+<!-- Navigation -->
+ <header>
+<div class="navbar">
+    <a href="home.html">HOME</a>
+    <a href="newarrivals.html">NEW ARRIVAL</a>
+    <a href="community.html">COMMUNITY</a>
+    <a href="inspo.html">INSPO</a>
+    <a href="experts.html" style="margin: 0;">EXPERTS</a>
+    <a href="contact.html">CONTACT</a>
+
+  </div>
+  
+  <!-- Header Section -->
+  <div class="header">
+    <h1>STYLESENSE INSPO</h1>
+    <p>Find your own personal style</p>
+    
+  </div>
+  </header> 
+
+<body>
+    <div class="gallery-container">
+        <div class="category-buttons">
+            <button>ACUBI</button>
+            <button>COTTAGECORE</button>
+            <button>FUNKY</button>
+            <button>HIJABI</button>
+            <button>MOB WIFE</button>
+            <button>MASCULINE</button>
+            <button>OFFICE SIREN</button>
+            <button>OLD MONEY</button>
+            <button>STREETSTYLE</button>
+        </div>
+        <div class="gallery-grid">
+        
+             <!-- ACUBI Category -->
+          <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi1.jpg" alt="ACUBI 1">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi2.jpg" alt="ACUBI 2">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi3.jpg" alt="ACUBI 3">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi4.jpg" alt="ACUBI 4">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi5.jpg" alt="ACUBI 5">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi6.jpg" alt="ACUBI 6">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi7.jpg" alt="ACUBI 7">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi8.jpg" alt="ACUBI 8">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi9.jpg" alt="ACUBI 9">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi10.jpg" alt="ACUBI 10">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi11.jpg" alt="ACUBI 11">
+        </div>
+        <div class="gallery-item" data-category="acubi">
+            <img src="Image/acubi12.jpg" alt="ACUBI 12">
+        </div>
+        
+       <!-- COTTAGECORE Category -->
+       <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage1.jpg" alt="COTTAGECORE 1">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage2.jpg"alt="COTTAGECORE 2">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage3.jpg" alt="COTTAGECORE 3">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage4.jpg" alt="COTTAGECORE 4">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage5.jpg" alt="COTTAGECORE 5">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage6.jpg" alt="COTTAGECORE 6">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage7.jpg" alt="COTTAGECORE 7">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage8.jpg" alt="COTTAGECORE 8">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage9.jpg" alt="COTTAGECORE 9">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage10.jpg" alt="COTTAGECORE 10">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage11.jpg" alt="COTTAGECORE 11">
+    </div>
+    <div class="gallery-item" data-category="cottagecore">
+        <img src="Image/cottage12.jpg" alt="COTTAGECORE 12">
+    </div>             
+
+   <!-- FUNKY Category -->
+   <div class="gallery-item" data-category="funky">
+    <img src="Image/funky1.jpg" alt="FUNKY 1">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky2.jpg" alt="FUNKY 2">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky3.jpg" alt="FUNKY 3">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky4.jpg" alt="FUNKY 4">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky5.jpg" alt="FUNKY 5">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky6.jpg" alt="FUNKY 6">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky7.jpg" alt="FUNKY 7">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky8.jpg" alt="FUNKY 8">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky9.jpg" alt="FUNKY 9">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky10.jpg" alt="FUNKY 10">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky11.jpg" alt="FUNKY 11">
+</div>
+<div class="gallery-item" data-category="funky">
+    <img src="Image/funky12.jpg" alt="FUNKY 12">
+</div>
+
+     <!-- HIJABI Category -->
+     <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi1.jpg" alt="HIJABI 1">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi2.jpg" alt="HIJABI 2">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi3.jpg" alt="HIJABI 3">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi4.jpg" alt="HIJABI 4">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi5.jpg" alt="HIJABI 5">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi6.jpg" alt="HIJABI 6">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi7.jpg" alt="HIJABI 7">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi8.jpg" alt="HIJABI 8">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi9.jpg" alt="HIJABI 9">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi10.jpg" alt="HIJABI 10">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi11.jpg" alt="HIJABI 11">
+  </div>
+  <div class="gallery-item" data-category="hijabi">
+      <img src="Image/hijabi12.jpg" alt="HIJABI 12">
+  </div>
+
+    <!-- MOB WIFE Category -->
+    <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife1.jpg" alt="MOB WIFE 1">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife2.jpg" alt="MOB WIFE 2">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife3.jpg" alt="MOB WIFE 3">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife4.jpg" alt="MOB WIFE 4">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife5.jpg" alt="MOB WIFE 5">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife6.jpg" alt="MOB WIFE 6">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife7.jpg" alt="MOB WIFE 7">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife8.jpg" alt="MOB WIFE 8">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife9.jpg" alt="MOB WIFE 9">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife10.jpg" alt="MOB WIFE 10">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife11.jpg" alt="MOB WIFE 11">
+  </div>
+  <div class="gallery-item" data-category="mob wife">
+      <img src="Image/mobwife12.jpg" alt="MOB WIFE 12">
+  </div>
+
+  <!-- MASCULINE Category -->
+  <div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine1.jpg" alt="MASCULINE 1">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine2.jpg" alt="MASCULINE 2">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine3.jpg" alt="MASCULINE 3">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine4.jpg" alt="MASCULINE 4">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine5.jpg" alt="MASCULINE 5">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine6.jpg" alt="MASCULINE 6">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine7.jpg" alt="MASCULINE 7">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine8.jpg" alt="MASCULINE 8">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine9.jpg" alt="MASCULINE 9">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine10.jpg" alt="MASCULINE 10">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine11.jpg" alt="MASCULINE 11">
+</div>
+<div class="gallery-item" data-category="masculine">
+    <img src="Image/masculine12.jpg" alt="MASCULINE 12">
+</div>
+
+ <!-- OFFICE SIREN Category -->
+ <div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren1.jpg" alt="OFFICE SIREN 1">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren2.jpg" alt="OFFICE SIREN 2">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren3.jpg" alt="OFFICE SIREN 3">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren4.jpg" alt="OFFICE SIREN 4">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren5.jpg" alt="OFFICE SIREN 5">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren6.jpg" alt="OFFICE SIREN 6">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren7.jpg" alt="OFFICE SIREN 7">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren8.jpg" alt="OFFICE SIREN 8">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren9.jpg" alt="OFFICE SIREN 9">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren10.jpg" alt="OFFICE SIREN 10">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren11.jpg" alt="OFFICE SIREN 11">
+</div>
+<div class="gallery-item" data-category="office siren">
+  <img src="Image/officesiren12.jpg" alt="OFFICE SIREN 12">
+</div>
+           
+ <!-- OLD MONEY Category -->
+ <div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney1.jpg" alt="OLD MONEY 1">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney2.jpg" alt="OLD MONEY 2">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney3.jpg" alt="OLD MONEY 3">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney4.jpg" alt="OLD MONEY 4">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney5.jpg" alt="OLD MONEY 5">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney6.jpg" alt="OLD MONEY 6">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney7.jpg" alt="OLD MONEY 7">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney8.jpg" alt="OLD MONEY 8">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney9.jpg" alt="OLD MONEY 9">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney10.jpg" alt="OLD MONEY 10">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney11.jpg" alt="OLD MONEY 11">
+</div>
+<div class="gallery-item" data-category="old money">
+  <img src="Image/oldmoney12.jpg" alt="OLD MONEY 12">
+</div>
+
+<!-- STREETSTYLE Category -->
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle1.jpg" alt="STREETSTYLE 1">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle2.jpg" alt="STREETSTYLE 2">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle3.jpg" alt="STREETSTYLE 3">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle4.jpg" alt="STREETSTYLE 4">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle5.jpg" alt="STREETSTYLE 5">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle6.jpg" alt="STREETSTYLE 6">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle7.jpg" alt="STREETSTYLE 7">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle8.jpg" alt="STREETSTYLE 8">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle9.jpg" alt="STREETSTYLE 9">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle10.jpg" alt="STREETSTYLE 10">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle11.jpg" alt="STREETSTYLE 11">
+</div>
+<div class="gallery-item" data-category="streetstyle">
+  <img src="Image/streetstyle12.jpg" alt="STREETSTYLE 12">
+</div>
+
+
+          
+      </div>
+  </div>
+            
+
+</body>
+
+<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <title>Document</title> 
+
+
+<footer> 
+  <div class="footerContainer"> 
+      <div class="socialIcons"> 
+          <a href="https://www.instagram.com/stylesense2025?igsh=MXFqYzFvejBzMnFoNA=="><i class="fa-brands fa-instagram"></i></a> 
+          <a href="https://www.tiktok.com/@stylesense_fashion?_t=ZS-8tPkyFPxrxS&_r=1"><i class="fa-brands fa-tiktok"></i></a> 
+          <a href="https://pin.it/38kbaQJe6"><i class="fa-brands fa-pinterest"></i></a> 
+          <a href="https://www.facebook.com/share/14q3Bn9mCH/"><i class="fa-brands fa-facebook"></i></a> 
+      </div> 
+      <div class="footerNav"> 
+          <ul><li><a href="Personal Portfolio.html">Home</a></li> 
+          </ul> 
+      </div> 
+       </div>
+  </div> 
+  <div class="footerBottom"> 
+      <p>Copyright &copy;2025; Designed by <span class="designer">STYLESENSE</span></p> 
+  </div> 
+  
+</footer>
+  
+  <script>
+  // Accordion 
+  function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+  
+  // Click on the "Jeans" link on page load to open the accordion for demo purposes
+  document.getElementById("myBtn").click();
+  
+  
+  // Open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+  
+</html>
+

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, .w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.w3-teal {
+  background-color:rgb(88, 17, 17) !important;
+}
+
+  
+ /*footer*/ 
+ footer{ 
+      background-color: rgb(88, 17, 17); 
+  } 
+  .footerContainer{ 
+      width: 100%; 
+      
+      padding: 70px 30px 20px ; 
+  } 
+  .socialIcons{ 
+      display: flex; 
+      justify-content: center; 
+  } 
+  .socialIcons a{ 
+      text-decoration: none; 
+      padding:  10px; 
+      background-color: rgb(244, 244, 245); 
+      margin: 10px; 
+      border-radius: 50%; 
+  } 
+  .socialIcons a i{ 
+      font-size: 2em; 
+      color: rgb(5, 30, 46); 
+      opacity: 0,9; 
+  } 
+  /* Hover affect on social media icon */ 
+  .socialIcons a:hover{ 
+      background-color: rgb(148, 108, 108); 
+      transition: 0.5s; 
+  } 
+  .socialIcons a:hover i{ 
+      color: white; 
+      transition: 0.5s; 
+  } 
+  .footerNav{ 
+      margin: 30px 0; 
+  } 
+  .footerNav ul{ 
+      display: flex; 
+      justify-content: center; 
+      list-style-type: none; 
+  } 
+  .footerNav ul li a{ 
+      color:rgb(255, 255, 255); 
+      margin: 20px; 
+      text-decoration: none; 
+      font-size: 1.3em; 
+      opacity: 0.7; 
+      transition: 0.5s; 
+   
+  } 
+  .footerNav ul li a:hover{ 
+      opacity: 1; 
+  } 
+  .footerBottom{ 
+     background-color: #151414;
+      padding: 20px; 
+      text-align: center; 
+  } 
+  .footerBottom p{ 
+      color: white; 
+  } 
+  .designer{ 
+      opacity: 0.7; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      font-weight: 400; 
+      margin: 0px 5px; 
+  } 
+  @media (max-width: 700px){ 
+      .footerNav ul{ 
+          flex-direction: column; 
+      }  
+      .footerNav ul li{ 
+          width:100%; 
+          text-align: center; 
+          margin: 10px; 
+      } 
+      .socialIcons a{ 
+          padding: 8px; 
+          margin: 4px; 
+      } 
+  }
+</style>
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+  <a href="newarrivals.html" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+  <a href="community.html" class="w3-bar-item w3-button">COMMUNITY</a>
+  <a href="inspo.html" class="w3-bar-item w3-button">INSPO</a>
+  <a href="experts.html" style="margin: 0;">EXPERTS</a>
+  <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<div id="main">
+    <div class="w3-teal" style="background-color: rgb(88, 17, 17);">
+
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+    </div>
+  </div>
+
+  <header class="w3-container w3-xlarge">
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <div class="w3-display-container w3-container">
+    <img src="Image/displaycontainer.png" alt="Display" style="width:100%">
+    <div class="w3-display-topleft w3-text-black" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+      <h1 class="w3-hide-small">Collection of 2025</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>12 items</p>
+  </div>
+
+<div class="w3-row w3-whitescale">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/hm1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">H&M</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www2.hm.com/en_my/productpage.1268050001.html" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Oversized lace-inset blouse<br><b>RM129.90</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/uni1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Uniqlo</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www.uniqlo.com/my/en/products/E477683-001?colorCode=COL10&sizeCode=SMA002" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Oxford Boxy Shirt | Long Sleeve | Stripe<br><b>RM129.90</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/cala1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Calaqisya</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://calaqisya.com/products/underpants-1?sku=18066822032654700541351105" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Ladies Underpants<br><b>RM49.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/zara1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Zara</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www.zara.com/my/en/plain-stitch-hoodie-p05755001.html?v1=410585294&v2=2419844" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Plain Stitch Hoodie<br><b>RM249.90</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/cottonon1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Cotton On</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://cottonon.com/MY/haven-wide-leg-pant-asia-fit/2057862-25.html?dwvar_2057862-25_color=2057862-25&cgid=womens-new-arrivals&originalPid=2057862-25#start=43&sz=60" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Haven Wide Leg Pant Asia Fit<br><b>RM159</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/poplook1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Poplook</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://poplook.com/en/what-s-new/25816-rusila-blouse-skirt-cream-pink-blossom.html" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Rusila Blouse & Skirt - Cream/Pink Blossom<br><b>RM169.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/mango1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Mango</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://shop.mango.com/my/en/p/women/pyjamas/t-shirts-and-tops/round-neck-knitted-sweater_87062889?c=92" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Round-neck knitted<br><b>RM269.90</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/petitmoi1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Petit Moi</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://petitmoi-shop.com/collections/new-in/products/lyla-kurung-in-spring" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Lyla Kurung in Spring<br><b>RM399.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/padini1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Padini</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www.padini.com/seed-disney-sweat-shirt-ladies-not-valid-for-exchange-se20408335.html
+          " class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Seed Disney Sweat Shirt Ladies<br><b>RM69.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="Image/bo1.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Brands Outlet</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www.padini.com/rope-casual-long-sleeve-blouse-ladies-ro20423902.html" class="w3-button w3-black">
+            Buy now <i class="fa fa-shopping-cart"></i>
+          </a>
+        </div>
+      </div>
+      <p>Ropé Casual Long Sleeve Blouse Ladies<br><b>RM39.90</b></p>
+    </div>
+  </div>
+</div>
+
+ 
+ <!-- Footer -->
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+<title>Document</title> 
+
+
+<footer> 
+<div class="footerContainer"> 
+  <div class="socialIcons"> 
+      <a href="https://www.instagram.com/stylesense2025?igsh=MXFqYzFvejBzMnFoNA=="><i class="fa-brands fa-instagram"></i></a> 
+      <a href="https://www.tiktok.com/@stylesense_fashion?_t=ZS-8tPkyFPxrxS&_r=1"><i class="fa-brands fa-tiktok"></i></a> 
+      <a href="https://pin.it/38kbaQJe6"><i class="fa-brands fa-pinterest"></i></a> 
+      <a href="https://www.facebook.com/share/14q3Bn9mCH/"><i class="fa-brands fa-facebook"></i></a> 
+  </div> 
+  <div class="footerNav"> 
+      <ul><li><a href="Personal Portfolio.html">Home</a></li> 
+      </ul> 
+  </div> 
+   </div>
+</div> 
+<div class="footerBottom"> 
+  <p>Copyright &copy;2025; Designed by <span class="designer">STYLESENSE</span></p> 
+</div> 
+
+</footer>
+
+
+
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+</body>
+</html>
